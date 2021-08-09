@@ -30,8 +30,20 @@ public class Produto {
 	private boolean disponivel;
 	
 	@ManyToOne //ultimo nome da anotação fazendo referencia a quantidade de dados que estou recebendo
-	@JsonIgnoreProperties("produtos")
+	@JsonIgnoreProperties("produto")
 	private Categoria categoria;
+
+	@ManyToOne
+	@JsonIgnoreProperties("produto")
+	private Usuario usuario;
+	
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
 
 	public Categoria getCategoria() {
 		return categoria;
